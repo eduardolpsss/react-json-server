@@ -1,15 +1,24 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Eduardo Luiz Pontes de Souza",
-        "email": "eduardo.pontes2801@gmail.com"
-    }, {
-        "id": 2,
-        "name": "Arthur Oliveira Castro",
-        "email": "aoliveira@cod3r.com"
-    }, {
-        "id": 3,
-        "name": "Maria Julia da Silveira",
-        "email": "mjdr@empresa.com"
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Eduardo Luiz Pontes de Souza",
+      "email": "eduardo.pontes2801@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Arthur Oliveira Castro",
+      "email": "aoliveira@cod3r.com"
+    },
+    {
+      "id": 3,
+      "name": "Maria Julia da Silveira",
+      "email": "mjdr@empresa.com"
+    },
+    {
+      "name": "Andrey Castro",
+      "email": "and.cas@gmail.com.br",
+      "id": 4
+    }
+  ]
 }
