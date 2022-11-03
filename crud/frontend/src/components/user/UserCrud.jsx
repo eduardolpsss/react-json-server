@@ -52,9 +52,9 @@ export default class UserCrud extends Component {
     }
 
     // Função que retorna uma lista atulizada com o último usuário em primeiro
-    getUpdatedList(user) {
+    getUpdatedList(user, add = true) {
         const list = this.state.list.filter(u => u.id !== user.id)
-        list.unshift(user)
+        if (add) list.unshift(user)
         return list
     }
 
@@ -73,9 +73,9 @@ export default class UserCrud extends Component {
 
     // Função para remover usuários do banco
     remove(user){
-        axios.delete(`${baseUrl}/@{user.id}`)
+        axios.delete(`${baseUrl}/${user.id}`)
             .then(resp => {
-                const list = this.getUpdatedList(null)
+                const list = this.getUpdatedList(user, false)
                 this.setState({ list })
             })
     }
@@ -84,13 +84,13 @@ export default class UserCrud extends Component {
     renderTable() {
         return(
             <table className="table mt-5">
-                <thead>
+                <thead align='center'>
                     <td>ID</td>
                     <td>Name</td>
                     <td>E-mail</td>
                     <td colSpan={2}>Actions</td>
                 </thead>
-                <tbody>
+                <tbody align='center'>
                     {/* Chamando a função renderRows que colocará as linhas na tabela */}
                     {this.renderRows()}
                 </tbody>
@@ -107,7 +107,7 @@ export default class UserCrud extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <button className="btn btn-warning" onClick={() => this.load(user)}>
+                        <button className="btn btn-secondary" onClick={() => this.load(user)}>
                             <i className="fa fa-pencil"></i>
                         </button>
                     </td>
