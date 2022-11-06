@@ -1,15 +1,15 @@
 :root {
-     --bg-dark: #030303;
+    --bg-dark: #030303;
 
-     --logo-height: 100px;
-     --header-height: 100px;
-     --menu-top-height: 70px;
-     --aside-width: 255px;
-     --footer-height: 40px;
+    --logo-height: 100px;
+    --header-height: 100px;
+    --menu-top-height: 70px;
+    --aside-width: 225px;
+    --footer-height: 40px;
 
-     --shadow: 
-        0 2px 23px 0 rgba(0,0,0,0.1),
-        0 2px 49px 0 rgba(0,0,0,0.06);
+    --shadow: 
+        0 2px 23px 0 rgba(0, 0, 0, 0.1),
+        0 2px 49px 0 rgba(0, 0, 0, 0.06);
 }
 
 * {
@@ -18,16 +18,21 @@
     color: rgb(181, 181, 181);
 }
 
-/* Layout em grid */
+body {
+    background-color: #030303;
+}
+
+/* Layout em Grid */
+
 .app {
     margin: 0px;
     display: grid;
     grid-template-columns: var(--aside-width) 1fr;
-    grid-template-rows: 
+    grid-template-rows:
         var(--header-height)
         1fr
         var(--footer-height);
-    grid-template-areas: 
+    grid-template-areas:
         "logo header"
         "menu content"
         "menu footer";
@@ -57,35 +62,32 @@ footer.footer {
 
 @media(max-width: 768px) {
     .app {
-        grid-template-rows: 
-        var(--header-height)
-        var(--menu-top-height)
-        1fr
-        var(--footer-height);
-
+        grid-template-rows:
+            var(--header-height)
+            var(--menu-top-height)
+            1fr
+            var(--footer-height);
         grid-template-columns: var(--aside-width) 1fr;
-
-        grid-template-areas: 
-        "logo header"
-        "menu menu"
-        "content content"
-        "footer footer";
+        grid-template-areas:
+            "logo header"
+            "menu menu"
+            "content content"
+            "footer footer";
     }
 }
+
 @media(max-width: 576px) {
     .app {
-        grid-template-rows: 
-        var(--logo-height)
-        var(--menu-top-height)
-        1fr
-        var(--footer-height);
-
+        grid-template-rows:
+            var(--logo-height)
+            var(--menu-top-height)
+            1fr
+            var(--footer-height);
         grid-template-columns: 1fr;
-
-        grid-template-areas: 
-        "logo"
-        "menu"
-        "content"
-        "footer";
+        grid-template-areas:
+            "logo"
+            "menu"
+            "content"
+            "footer";
     }
 }
